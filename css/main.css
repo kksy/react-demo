@@ -1,0 +1,34 @@
+/* FOR REACT */
+.collection-item:hover {
+    background-color: #26A69A;
+  }
+  
+  .marked-done {
+    text-decoration: line-through;
+  }
+  
+  /* SLIDES STYLE */
+  .reveal .caption {
+    font-size: 14px;
+    display: block;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  
+  .reveal section img {
+    box-shadow: none;
+    border: 0;
+  }
+  
+  .reveal img {
+    max-width: 70%;
+  }
+  
+  .text-small {
+    font-size: 0.5em;
+  }
+  
+  .reveal img.react-logo {
+    max-height: 200px;
+    margin-bottom: 0
+  }
