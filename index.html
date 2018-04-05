@@ -106,6 +106,23 @@
             <p>"...can be used to design / program how the web pages behave on the occurrence of an event"</p>
             <p class="caption">MDN Web Docs</p>
           </section>
+          <section>
+            <pre><code data-trim class="javascript">
+              var button = document.getElementById('click');
+              var demoContainer = document.getElementById('click-demo');
+
+              var renderText = function() {
+                var p = document.createElement('p');
+                p.innerText = 'YAAAAAASSSS';
+                demoContainer.append(p);
+              };
+
+              button.addEventListener('click', renderText);
+            </code></pre>
+            <div id="click-demo">
+              <button id="click" class="click">Click me</button>
+            </div>
+          </section>
         </section>
 
         <section>
@@ -124,6 +141,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/buttonClick.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -136,7 +154,8 @@
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
-			});
+      });
+      ButtonDemo.initialize();
 		</script>
 	</body>
 </html>

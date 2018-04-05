@@ -25,6 +25,10 @@
 }
 
 /* demo styles */
+#demo-container {
+  margin: 0 auto;
+}
+
 .click {
   font-size: 20px;
   background-color: #cc99ff;
