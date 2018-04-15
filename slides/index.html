@@ -205,8 +205,33 @@
           </section>
 
           <section>
+            let's start refactoring our app! So how do we make components reusable?
+          </section>
+
+          <section>
+            <p>using props</p>
+            <pre><code data-trim class="javascript">
+              const Greeting = (props) => (
+                &lt;div&gt;
+                  {props.text}
+                &lt;/div&gt;
+              );
+            </code></pre>
+            <p>Now we can use it multiple times!</p>
+            <pre><code data-trim class="javascript">
+              const App = (props) => (
+                &lt;div&gt;
+                  &lt;Greeting text=&quot;Hi&quot; /&gt;
+                  &lt;Greeting text=&quot;Hello&quot; /&gt;
+                  &lt;Greeting text=&quot;Welcome&quot; /&gt;
+                &lt;/div&gt;
+              );
+            </code></pre>
+          </section>
+
+          <section>
             <h2>Thinking the react way</h2>
-            <p>First, let's break down our app into components</p>
+            <p>how we can further break down our app</p>
             <img src="img/todolist-layout.png" alt="to do list layout">
             <p style="font-size:25px;">
               <span style="color:red;">TodoApp</span>,
