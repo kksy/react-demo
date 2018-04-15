@@ -1,0 +1,42 @@
+/* presentation styles */
+.reveal .caption {
+  font-size: 14px;
+  display: block;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.reveal section img {
+  box-shadow: none;
+  border: 0;
+}
+
+.reveal img {
+  max-width: 70%;
+}
+
+.text-small {
+  font-size: 0.5em;
+}
+
+.reveal img.react-logo {
+  max-height: 200px;
+  margin-bottom: 0
+}
+
+/* demo styles */
+
+#click-demo {
+  border: 1px solid #333;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.click {
+  font-size: 20px;
+  background-color: #cc99ff;
+  border-radius: 2px;
+  padding: 10px;
+  border: none;
+}

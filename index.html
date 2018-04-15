@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>react demo</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h1>Getting Started with React</h1>
+          <img class="react-logo" src="img/react.png" alt="react logo">
+          <p>a beginner-friendly guide</p>
+        </section>
+
+        <section>
+          <h2>Goals</h2>
+          <ul>
+            <li>Introduction to front end: HTML, CSS, JS</li>
+            <li>React building blocks: Let's make a to-do list!</li>
+            <li>Component life cycle</li>
+            <li>Why use React</li>
+            <li>Next steps</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What is HTML?</h2>
+          <section>describes the structure of a webpage</section>
+          <section>
+              <pre><code data-trim class="html">
+                  &lt;!DOCTYPE HTML&gt;
+                  &lt;html&gt;
+                    &lt;head&gt;
+                      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+                      &lt;title&gt;Your Website&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                      &lt;p&gt;Hello world&lt;/p&gt;
+                    &lt;/body&gt;
+                  &lt;/html&gt;
+              </code></pre>
+          </section>
+          <section>
+            <img src="img/html.png" alt="html">
+            <p class="caption">Learning Web Design, Jennifer Robbins</p>
+          </section>
+          <section>
+            <p>So let's say we need a button...</p>
+            <pre><code data-trim class="html">
+              <button>Click me</button>
+            </code></pre>
+            <button>Click me</button>
+          </section>
+        </section>
+
+        <section>
+          <h2>What is CSS?</h2>
+          <section>
+            <p>"CSS describes how elements should be rendered on screen..."</p>
+            <p class="caption">MDN Web Docs</p>
+          </section>
+          <section>
+            <pre><code data-trim class="css">
+              /* selector: button */
+              button {
+                /* property: font-size, value: 20px */
+                font-size: 20px;
+              }
+            </code></pre>
+          </section>
+          <section>
+            <pre><code data-trim class="css">
+              .click {
+                font-size: 20px;
+                background-color: aliceblue;
+                border-radius: 2px;
+                padding: 10px;
+              }
+            </code></pre>
+            <button class="click">Click me</button>
+          </section>
+        </section>
+
+        <section>
+          <h2>JavaScript</h2>
+          <section>
+            <p>"...can be used to design / program how the web pages behave on the occurrence of an event"</p>
+            <p class="caption">MDN Web Docs</p>
+          </section>
+          <section>
+            <pre><code data-trim class="javascript">
+              var button = document.getElementById('click');
+              var demoContainer = document.getElementById('click-demo');
+
+              var renderText = function() {
+                var p = document.createElement('p');
+                p.innerText = 'YAAAAAASSSS';
+                demoContainer.append(p);
+              };
+
+              button.addEventListener('click', renderText);
+            </code></pre>
+            <div id="click-demo">
+              <button id="click" class="click">Click me</button>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h2>Thinking the react way</h2>
+          <p>First, let's break down our app into components</p>
+          <img src="img/todolist-layout.png" alt="to do list layout">
+          <p style="font-size:25px;">
+            <span style="color:red;">TodoApp</span>,
+            <span style="color:orange;">TodoInput</span>,
+            <span style="color:blueviolet;">TodoList</span>,
+            <span style="color:yellowgreen;">TodoListItem</span>
+          </p>
+        </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/buttonClick.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+      });
+      ButtonDemo.initialize();
+		</script>
+	</body>
+</html>
