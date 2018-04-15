@@ -120,6 +120,7 @@
           <section>
             <p>in JavaScript</p>
             <pre><code data-trim class="javascript">
+              // buttonClick.js
               var button = document.getElementById('click');
               var demoContainer = document.getElementById('click-demo');
 
@@ -134,6 +135,16 @@
             <div id="click-demo">
               <button id="click" class="click">Click me</button>
             </div>
+          </section>
+
+          <section>
+            <p>you can also do this but it's messy</p>
+            <pre><code data-trim class="html">
+              <div id="click-demo">
+                <button onClick="event.preventDefault(); console.log('I am inline. To messy to display other suff')" class="click">Click me</button>
+              </div>
+            </code></pre>
+            <button onClick="event.preventDefault(); console.log('I am inline. Too messy to display other suff')" class="click">Click me</button>
           </section>
         </section>
 
@@ -230,6 +241,10 @@
           </section>
 
           <section>
+            conditional rendering eg what if we want to not display the box when there are no to do items?
+          </section>
+
+          <section>
             <h2>Thinking the react way</h2>
             <p>how we can further break down our app</p>
             <img src="img/todolist-layout.png" alt="to do list layout">
@@ -240,6 +255,42 @@
               <span style="color:yellowgreen;">TodoListItem</span>
             </p>
           </section>
+        </section>
+
+        <section>
+          <h2>Component life cycle</h2>
+        </section>
+
+        <section>
+          <h2>Why should we use React?</h2>
+          <section>
+            <p>reusable components</p>
+          </section>
+
+          <section>
+            <p>one way data flow makes behaviour predictable</p>
+            <img width="50%" src="/img/jquery-style-vs-react-style.png" alt="one way data flow">
+          </section>
+
+          <section>
+            <p>easier to test</p>
+          </section>
+
+          <section>
+            <p>documentation and community</p>
+          </section>
+
+          <section>
+            <p>...but technology changes rapidly</p>
+            <ul>
+              <li>does not mean we should keep choosing new tech</li>
+              <li>should focus on what we can do to increase developer productivity <span style={}>NOW</span></li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Resources</h2>
         </section>
 			</div>
 		</div>
