@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// A stateful component so we can save the value from input
+// Handling events
 
-class TodoApp extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { value: '' }
+const TodoApp = () => {
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form got submitted!');
+    const todoForm = event.target;
+    console.log(todoForm.firstChild.value);
   }
 
-  render() {
-    return (
-      <div>
-        <form>
-          <input value={this.state.value} type="text" placeholder="Add a todo" />
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <form onSubmit={onSubmit}>
+      <input type="text" placeholder="Add a todo" />
+    </form>
+  );
+};
 
 export default TodoApp;

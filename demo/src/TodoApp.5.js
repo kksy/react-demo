@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// Rendering state data
+// Rendering state data and embedding javascript expression
 
-class TodoApp extends Component {
+class TodoApp extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { todos: [] };
     this.onSubmit = this.onSubmit.bind(this);
   }

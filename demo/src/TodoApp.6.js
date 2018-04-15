@@ -1,10 +1,18 @@
 import React from 'react';
 
-// Saving to state
+// Refactoring: intro to props
+
+const TodoList = (props) => (
+  <div>
+    {props.items.map((item) =>
+      <div>{item}</div>
+    )}
+  </div>
+);
 
 class TodoApp extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = { todos: [] };
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -23,6 +31,7 @@ class TodoApp extends React.Component {
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="Add a todo" />
         </form>
+        <TodoList items={this.state.todos} />
       </div>
     );
   }

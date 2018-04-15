@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// event: on submit
+// Stateful component
 
-class TodoApp extends Component {
+class TodoApp extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = { todos: [] };
     this.onSubmit = this.onSubmit.bind(this);
   }
 

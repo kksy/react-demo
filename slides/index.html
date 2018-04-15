@@ -79,9 +79,14 @@
             <p class="caption">MDN Web Docs</p>
           </section>
           <section>
+            <p>in HTML</p>
+            <pre><code data-trim class="html">
+              &lt;button class=&quot;click&quot;&gt; Click me&lt;/button&gt;
+            </code></pre>
+            <p>styling it in css</p>
             <pre><code data-trim class="css">
-              /* selector: button */
-              button {
+              /* selector: .click */
+              .click {
                 /* property: font-size, value: 20px */
                 font-size: 20px;
               }
@@ -107,6 +112,13 @@
             <p class="caption">MDN Web Docs</p>
           </section>
           <section>
+            <p>let's add an id to our element to make it easier to select</p>
+            <pre><code data-trim class="html">
+              &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt; Click me&lt;/button&gt;
+            </code></pre>
+          </section>
+          <section>
+            <p>in JavaScript</p>
             <pre><code data-trim class="javascript">
               var button = document.getElementById('click');
               var demoContainer = document.getElementById('click-demo');
@@ -126,15 +138,83 @@
         </section>
 
         <section>
-          <h2>Thinking the react way</h2>
-          <p>First, let's break down our app into components</p>
-          <img src="img/todolist-layout.png" alt="to do list layout">
-          <p style="font-size:25px;">
-            <span style="color:red;">TodoApp</span>,
-            <span style="color:orange;">TodoInput</span>,
-            <span style="color:blueviolet;">TodoList</span>,
-            <span style="color:yellowgreen;">TodoListItem</span>
-          </p>
+          <section>
+            <h2>What is react?</h2>
+            <p>"A Javascript library for building user interfaces"</p>
+            <p class="caption">React Docs</p>
+          </section>
+
+          <section>
+            <p>rendering a simple component</p>
+            <pre><code data-trim class="javascript">
+              const TodoApp = () => (
+                &lt;form&gt;
+                  &lt;input type=&quot;text&quot; placeholder=&quot;Add a todo&quot; /&gt;
+                &lt;/form&gt;
+              );
+
+              ReactDOM.render(&lt;TodoApp /&gt;, document.getElementById('root'));
+            </code></pre>
+          </section>
+
+          <section>
+            <p>document.getElementById('root') refers to</p>
+            <pre><code data-trim class="html">
+              <div id="root"></div>
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Handling events</p>
+            <pre><code data-trim class="javascript">
+              const TodoApp = () =&gt; {
+                const onSubmit = (event) =&gt; {
+                  event.preventDefault();
+                  console.log('Form got submitted!');
+                }
+
+                return (
+                  &lt;form onSubmit={onSubmit}&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Add a todo&quot; /&gt;
+                  &lt;/form&gt;
+                );
+              };
+            </code></pre>
+          </section>
+
+          <section>
+            <p>a stateful component to save our todo items</p>
+            <pre><code data-trim class="javascript">
+              class TodoApp extends React.Component {
+                constructor(props) {
+                  super(props);
+                  this.state = { todos: [] };
+                }
+
+                render() {
+                  return (
+                    ...
+                  );
+                }
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <p>using this.setState() to change state</p>
+          </section>
+
+          <section>
+            <h2>Thinking the react way</h2>
+            <p>First, let's break down our app into components</p>
+            <img src="img/todolist-layout.png" alt="to do list layout">
+            <p style="font-size:25px;">
+              <span style="color:red;">TodoApp</span>,
+              <span style="color:orange;">TodoInput</span>,
+              <span style="color:blueviolet;">TodoList</span>,
+              <span style="color:yellowgreen;">TodoListItem</span>
+            </p>
+          </section>
         </section>
 			</div>
 		</div>
