@@ -1,13 +1,13 @@
 import React from 'react';
 
-// Refactoring: intro to props
+// Refactoring: using props
 
-const TodoList = (props) => (
-  <div>
+const List = (props) => (
+  <ul>
     {props.items.map((item) =>
-      <div>{item}</div>
+      <li key={item}>{item}</li>
     )}
-  </div>
+  </ul>
 );
 
 class TodoApp extends React.Component {
@@ -31,7 +31,7 @@ class TodoApp extends React.Component {
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="Add a todo" />
         </form>
-        <TodoList items={this.state.todos} />
+        <List items={this.state.todos} />
       </div>
     );
   }

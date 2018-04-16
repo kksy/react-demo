@@ -23,9 +23,11 @@ class TodoApp extends React.Component {
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="Add a todo" />
         </form>
-        {this.state.todos.map((item) =>
-          <div>{item}</div>
-        )}
+        <ul>
+          {this.state.todos.map((item) =>
+            <div key={item}>{item}</div>
+          )}
+        </ul>
       </div>
     );
   }

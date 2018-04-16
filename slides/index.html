@@ -114,7 +114,7 @@
           <section>
             <p>Let's add an id to our element to make it easier to select</p>
             <pre><code data-trim class="html">
-              &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt; Click me&lt;/button&gt;
+              &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt;Click me&lt;/button&gt;
             </code></pre>
           </section>
           <section>
@@ -212,7 +212,11 @@
           </section>
 
           <section>
-            <p>Using this.setState() to change state</p>
+            <p>Use this.setState() to change state</p>
+          </section>
+
+          <section>
+            <p>Use {} to embed JavaScript expressions</p>
           </section>
 
           <section>
@@ -230,7 +234,7 @@
             </code></pre>
             <p>Now we can use it multiple times!</p>
             <pre><code data-trim class="javascript">
-              const App = (props) => (
+              const App = (props) =&gt; (
                 &lt;div&gt;
                   &lt;Greeting text=&quot;Hi&quot; /&gt;
                   &lt;Greeting text=&quot;Hello&quot; /&gt;
@@ -241,7 +245,21 @@
           </section>
 
           <section>
-            Conditional rendering eg what if we want to not display the box when there are no to do items?
+            Conditional rendering: What if we want to display something else when the list is empty?
+            <pre><code data-trim class="javascript">
+              render() {
+                return (
+                  &lt;div&gt;
+                    ...
+                    {
+                      this.state.todos.length === 0 ?
+                        &lt;Message /&gt; :
+                        &lt;List items={this.state.todos} /&gt;
+                    }
+                  &lt;/div&gt;
+                );
+              }
+            </code></pre>
           </section>
 
           <section>
