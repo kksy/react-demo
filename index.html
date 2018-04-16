@@ -277,6 +277,35 @@
 
         <section>
           <h2>Component life cycle</h2>
+          <section>
+            <p>When an component loads</p>
+            <ol>
+              <li>componentWillMount</li>
+              <li>render</li>
+              <li>componentDidMount</li>
+            </ol>
+          </section>
+
+          <section>
+            <p>When state changes</p>
+            <ol>
+              <li>shouldComponentUpdate</li>
+              <li>componentWillUpdate</li>
+              <li>render</li>
+              <li>componentDidUpdate</li>
+            </ol>
+          </section>
+
+          <section>
+            <p>When props changes</p>
+            <ol>
+              <li>componentWillReceiveProps</li>
+              <li>shouldComponentUpdate</li>
+              <li>componentWillUpdate</li>
+              <li>render</li>
+              <li>componentDidUpdate</li>
+            </ol>
+          </section>
         </section>
 
         <section>
@@ -309,6 +338,10 @@
 
         <section>
           <h2>Resources</h2>
+          <ul>
+            <li><a href="https://reactjs.org/docs/">React docs</a></li>
+            <li><a href="https://medium.com/@baphemot/understanding-reactjs-component-life-cycle-823a640b3e8d">Component life cycles in depth</a></li>
+          </ul>
         </section>
 			</div>
 		</div>
