@@ -44,11 +44,11 @@
 
         <section>
           <h2>What is HTML?</h2>
-          <section>describes the structure of a webpage</section>
+          <section>Describes the structure of a webpage</section>
           <section>
               <pre><code data-trim class="html">
-                  &lt;!DOCTYPE HTML&gt;
-                  &lt;html&gt;
+                  &lt;!doctype html&gt;
+                  &lt;html lang=&quot;en&quot;&gt;
                     &lt;head&gt;
                       &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
                       &lt;title&gt;Your Website&lt;/title&gt;
@@ -79,11 +79,11 @@
             <p class="caption">MDN Web Docs</p>
           </section>
           <section>
-            <p>in HTML</p>
+            <p>In HTML</p>
             <pre><code data-trim class="html">
               &lt;button class=&quot;click&quot;&gt; Click me&lt;/button&gt;
             </code></pre>
-            <p>styling it in css</p>
+            <p>Styling it in css</p>
             <pre><code data-trim class="css">
               /* selector: .click */
               .click {
@@ -112,13 +112,13 @@
             <p class="caption">MDN Web Docs</p>
           </section>
           <section>
-            <p>let's add an id to our element to make it easier to select</p>
+            <p>Let's add an id to our element to make it easier to select</p>
             <pre><code data-trim class="html">
               &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt; Click me&lt;/button&gt;
             </code></pre>
           </section>
           <section>
-            <p>in JavaScript</p>
+            <p>In JavaScript</p>
             <pre><code data-trim class="javascript">
               // buttonClick.js
               var button = document.getElementById('click');
@@ -138,13 +138,13 @@
           </section>
 
           <section>
-            <p>you can also do this but it's messy</p>
+            <p>You can also do this but it's messy</p>
             <pre><code data-trim class="html">
               <div id="click-demo">
-                <button onClick="event.preventDefault(); console.log('I am inline. To messy to display other suff')" class="click">Click me</button>
+                <button onClick="event.preventDefault(); console.log('I am inline. To messy to display other stuff')" class="click">Click me</button>
               </div>
             </code></pre>
-            <button onClick="event.preventDefault(); console.log('I am inline. Too messy to display other suff')" class="click">Click me</button>
+            <button onClick="event.preventDefault(); console.log('I am inline. Too messy to display other stuff')" class="click">Click me</button>
           </section>
         </section>
 
@@ -156,7 +156,7 @@
           </section>
 
           <section>
-            <p>rendering a simple component</p>
+            <p>Rendering a simple component</p>
             <pre><code data-trim class="javascript">
               const TodoApp = () => (
                 &lt;form&gt;
@@ -194,7 +194,7 @@
           </section>
 
           <section>
-            <p>a stateful component to save our todo items</p>
+            <p>A stateful component to save our todo items</p>
             <pre><code data-trim class="javascript">
               class TodoApp extends React.Component {
                 constructor(props) {
@@ -212,15 +212,15 @@
           </section>
 
           <section>
-            <p>using this.setState() to change state</p>
+            <p>Using this.setState() to change state</p>
           </section>
 
           <section>
-            let's start refactoring our app! So how do we make components reusable?
+            Let's start refactoring our app! So how do we make components reusable?
           </section>
 
           <section>
-            <p>using props</p>
+            <p>Using props</p>
             <pre><code data-trim class="javascript">
               const Greeting = (props) => (
                 &lt;div&gt;
@@ -241,12 +241,12 @@
           </section>
 
           <section>
-            conditional rendering eg what if we want to not display the box when there are no to do items?
+            Conditional rendering eg what if we want to not display the box when there are no to do items?
           </section>
 
           <section>
-            <h2>Thinking the react way</h2>
-            <p>how we can further break down our app</p>
+            <h2>Thinking the React way</h2>
+            <p>How we can further break down our app</p>
             <img src="img/todolist-layout.png" alt="to do list layout">
             <p style="font-size:25px;">
               <span style="color:red;">TodoApp</span>,
@@ -268,23 +268,23 @@
           </section>
 
           <section>
-            <p>one way data flow makes behaviour predictable</p>
+            <p>One way data flow makes behaviour predictable</p>
             <img width="50%" src="img/jquery-style-vs-react-style.png" alt="one way data flow">
           </section>
 
           <section>
-            <p>easier to test</p>
+            <p>Easier to test</p>
           </section>
 
           <section>
-            <p>documentation and community</p>
+            <p>Documentation and community</p>
           </section>
 
           <section>
             <p>...but technology changes rapidly</p>
             <ul>
-              <li>does not mean we should keep choosing new tech</li>
-              <li>should focus on what we can do to increase developer productivity <span style={}>NOW</span></li>
+              <li>Does not mean we should keep choosing new tech</li>
+              <li>Should focus on what we can do to increase developer productivity <span style={}>NOW</span></li>
             </ul>
           </section>
         </section>
