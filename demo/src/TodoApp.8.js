@@ -19,6 +19,8 @@ class List extends React.Component {
 
   componentDidUpdate() { console.log('List componentDidUpdate'); }
 
+  componentWillUnmount() { console.log('List componentWillUnmount'); }
+
   render() {
     console.log('List render');
     return (
@@ -49,6 +51,8 @@ class TodoApp extends React.Component {
   shouldComponentUpdate() { console.log('TodoApp shouldComponentUpdate?'); return true; }
 
   componentDidUpdate() { console.log('TodoApp componentDidUpdate'); }
+
+  componentWillUnmount() { console.log('TodoApp componentWillUnmount'); }
 
   onSubmit(event) {
     event.preventDefault();
