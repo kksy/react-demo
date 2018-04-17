@@ -1,14 +1,24 @@
 import React from 'react';
 
-// Additional example: removing an item
+// Additional example: Demo component will unmount
 
-const List = (props) => (
-  <ul>
-    {props.items.map((item) =>
-      <li key={item} onClick={props.onClick}>{item}</li>
-    )}
-  </ul>
-);
+class List extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillUnmount() { console.log('List componentWillUnmount'); }
+
+  render() {
+    return(
+      <ul>
+        {this.props.items.map((item) =>
+          <li key={item} onClick={this.props.onClick}>{item}</li>
+        )}
+      </ul>
+    );
+  }
+}
 
 const Message = () => <div>Nice! You have no things to do</div>
 
