@@ -3,11 +3,15 @@ import React from 'react';
 // Component life cycle
 
 class List extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentWillMount() { console.log('List componentWillMount'); }
 
   componentDidMount() { console.log('List componentDidMount'); }
 
-  componentWillReceiveProps(props) { console.log('List componentWillReceiveProps: ', props); }
+  componentWillReceiveProps() { console.log('List componentWillReceiveProps'); }
 
   componentWillUpdate() { console.log('List componentWillUpdate'); }
 
@@ -42,7 +46,7 @@ class TodoApp extends React.Component {
 
   componentWillReceiveProps() { console.log('TodoApp componentWillReceiveProps'); }
 
-  componentWillUpdate(nextProps, nextState) { console.log('TodoApp componentWillUpdate with state: ', nextState); }
+  componentWillUpdate() { console.log('TodoApp componentWillUpdate'); }
 
   shouldComponentUpdate() { console.log('TodoApp shouldComponentUpdate?'); return true; }
 
