@@ -8,14 +8,14 @@
   var demoContainer = document.getElementById('click-demo');
   console.log('WHERE TO DISPLAY TEXT', demoContainer);
 
-  var renderText = function() {
-    var p = document.createElement('p');
-    p.innerText = 'YAAAAAASSSS';
-    demoContainer.append(p);
+  var renderParrots = function() {
+    var image = document.createElement('img');
+    image.src = 'img/party_parrot.gif';
+    demoContainer.append(image);
   };
 
   var addClickListener = function() {
-    button.addEventListener('click', renderText);
+    button.addEventListener('click', renderParrots);
   }
 
   ButtonDemo = {
