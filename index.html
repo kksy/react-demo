@@ -112,19 +112,13 @@
             <p class="caption">MDN Web Docs</p>
           </section>
           <section>
-            <p>Let's add an id to our element to make it easier to select</p>
-            <pre><code data-trim class="html">
-              &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt;Click me&lt;/button&gt;
-            </code></pre>
-          </section>
-          <section>
             <p>Connect our JavaScript file buttonClick.js in HTML script tag</p>
             <pre><code data-trim class="html">
               &lt;!doctype html&gt;
               &lt;html lang=&quot;en&quot;&gt;
                 ...
                 &lt;body&gt;
-                  ...
+                  &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt;Click me&lt;/button&gt;
                   &lt;script src=&quot;js/buttonClick.js&quot;&gt;&lt;/script&gt;
                 &lt;/body&gt;
               &lt;/html&gt;
@@ -169,17 +163,6 @@
           </section>
 
           <section>
-            <p>Installation</p>
-            <pre><code data-trim class="bash">
-              npm install -g create-react-app
-              create-react-app my-app
-
-              cd my-app
-              npm start
-            </code></pre>
-          </section>
-
-          <section>
             <p>Rendering a simple component</p>
             <pre><code data-trim class="javascript">
               const Hello = () => (
@@ -195,29 +178,6 @@
                 <li>Name is capital! See warning in console it won't work</li>
               </ul>
             </aside>
-          </section>
-
-          <section>
-            <p>JSX is an XML/HTML-like syntax in Javascript</p>
-            <pre><code data-trim class="javascript">
-              // without JSX
-              var paragraph = React.createElement({
-                'p',
-                { className: 'hello' }
-              });
-
-              // JSX
-              var paragraphJSX = (&lt;p className=&quot;hello&quot;&gt;Hello world!&lt;/p&gt;);
-            </code></pre>
-          </section>
-
-          <section>
-            <p>Why do I need it?</p>
-            <a href="https://www.reactenlightenment.com/react-jsx/5.1.html" target="_blank">nav example without JSX</a>
-          </section>
-
-          <section>
-            <img src="img/homer-scream.gif" alt="homer screaming">
           </section>
 
           <section>
@@ -299,7 +259,7 @@
             </code></pre>
             <p>Now we can use it multiple times!</p>
             <pre><code data-trim class="javascript">
-              const App = (props) =&gt; (
+              const App = () =&gt; (
                 &lt;div&gt;
                   &lt;Greeting text=&quot;Hi&quot; /&gt;
                   &lt;Greeting text=&quot;Hello&quot; /&gt;
@@ -379,7 +339,7 @@
           </section>
 
           <section>
-            <p>When props changes</p>
+            <p>When changes to state passes in new props</p>
             <ol>
               <li>componentWillReceiveProps</li>
               <li>shouldComponentUpdate</li>
@@ -413,14 +373,6 @@
 
           <section>
             <p>Documentation and community</p>
-          </section>
-
-          <section>
-            <p>...but technology changes rapidly</p>
-            <ul>
-              <li>Does not mean we should keep choosing new tech</li>
-              <li>Should focus on what we can do to increase developer productivity <span style={}>NOW</span></li>
-            </ul>
           </section>
         </section>
 
