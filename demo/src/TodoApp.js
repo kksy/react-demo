@@ -1,37 +1,16 @@
 import React from 'react';
 
-// Component life cycle
+// Conditional rendering
 
-class List extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const List = (props) => (
+  <ul>
+    {props.items.map((item) =>
+      <li key={item}>{item}</li>
+    )}
+  </ul>
+);
 
-  componentWillMount() { console.log('List componentWillMount'); }
-
-  componentDidMount() { console.log('List componentDidMount'); }
-
-  componentWillReceiveProps() { console.log('List componentWillReceiveProps'); }
-
-  componentWillUpdate() { console.log('List componentWillUpdate'); }
-
-  shouldComponentUpdate() { console.log('List shouldComponentUpdate?'); return true; }
-
-  componentDidUpdate() { console.log('List componentDidUpdate'); }
-
-  componentWillUnmount() { console.log('List componentWillUnmount'); }
-
-  render() {
-    console.log('List render');
-    return (
-      <ul>
-        {this.props.items.map((item) =>
-          <li key={item}>{item}</li>
-        )}
-      </ul>
-    );
-  }
-}
+const Message = () => <div>Nice! You have no things to do</div>
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -39,20 +18,6 @@ class TodoApp extends React.Component {
     this.state = { todos: [] };
     this.onSubmit = this.onSubmit.bind(this);
   }
-
-  componentWillMount() { console.log('TodoApp componentWillMount'); }
-
-  componentDidMount() { console.log('TodoApp componentDidMount'); }
-
-  componentWillReceiveProps() { console.log('TodoApp componentWillReceiveProps'); }
-
-  componentWillUpdate() { console.log('TodoApp componentWillUpdate'); }
-
-  shouldComponentUpdate() { console.log('TodoApp shouldComponentUpdate?'); return true; }
-
-  componentDidUpdate() { console.log('TodoApp componentDidUpdate'); }
-
-  componentWillUnmount() { console.log('TodoApp componentWillUnmount'); }
 
   onSubmit(event) {
     event.preventDefault();
@@ -63,13 +28,16 @@ class TodoApp extends React.Component {
   }
 
   render() {
-    console.log('render');
     return (
       <div>
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="Add a todo" />
         </form>
-        <List items={this.state.todos} />
+        {
+          this.state.todos.length === 0 ?
+            <Message /> :
+            <List items={this.state.todos} />
+        }
       </div>
     );
   }
