@@ -47,16 +47,16 @@
           <section>Describes the structure of a webpage</section>
           <section>
               <pre><code data-trim class="html">
-                  &lt;!doctype html&gt;
-                  &lt;html lang=&quot;en&quot;&gt;
-                    &lt;head&gt;
-                      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
-                      &lt;title&gt;Your Website&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                      &lt;p&gt;Hello world&lt;/p&gt;
-                    &lt;/body&gt;
-                  &lt;/html&gt;
+                &lt;!doctype html&gt;
+                &lt;html lang=&quot;en&quot;&gt;
+                  &lt;head&gt;
+                    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+                    &lt;title&gt;Your Website&lt;/title&gt;
+                  &lt;/head&gt;
+                  &lt;body&gt;
+                    &lt;p&gt;Hello world&lt;/p&gt;
+                  &lt;/body&gt;
+                &lt;/html&gt;
               </code></pre>
           </section>
           <section>
@@ -115,6 +115,19 @@
             <p>Let's add an id to our element to make it easier to select</p>
             <pre><code data-trim class="html">
               &lt;button id=&quot;click&quot; class=&quot;click&quot;&gt;Click me&lt;/button&gt;
+            </code></pre>
+          </section>
+          <section>
+            <p>Connect our JavaScript file buttonClick.js in HTML script tag</p>
+            <pre><code data-trim class="html">
+              &lt;!doctype html&gt;
+              &lt;html lang=&quot;en&quot;&gt;
+                ...
+                &lt;body&gt;
+                  ...
+                  &lt;script src=&quot;js/buttonClick.js&quot;&gt;&lt;/script&gt;
+                &lt;/body&gt;
+              &lt;/html&gt;
             </code></pre>
           </section>
           <section>
@@ -350,6 +363,9 @@
               <li>render</li>
               <li>componentDidMount</li>
             </ol>
+            <aside class="notes">
+              SyncProgressPage componentWillMount
+            </aside>
           </section>
 
           <section>
