@@ -1,24 +1,54 @@
 import React from 'react';
 
-// Additional example: removing an item
+// Component life cycle
 
-const List = (props) => (
-  <ul>
-    {props.items.map((item) =>
-      <li key={item} onClick={props.onClick}>{item}</li>
-    )}
-  </ul>
-);
+class List extends React.Component {
+  componentWillMount() { console.log('List componentWillMount'); }
 
-const Message = () => <div>Nice! You have no things to do</div>
+  componentDidMount() { console.log('List componentDidMount'); }
+
+  componentWillReceiveProps(props) { console.log('List componentWillReceiveProps: ', props); }
+
+  componentWillUpdate() { console.log('List componentWillUpdate'); }
+
+  shouldComponentUpdate() { console.log('List shouldComponentUpdate?'); return true; }
+
+  componentDidUpdate() { console.log('List componentDidUpdate'); }
+
+  componentWillUnmount() { console.log('List componentWillUnmount'); }
+
+  render() {
+    console.log('List render');
+    return (
+      <ul>
+        {this.props.items.map((item) =>
+          <li key={item}>{item}</li>
+        )}
+      </ul>
+    );
+  }
+}
 
 class TodoApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = { todos: [] };
     this.onSubmit = this.onSubmit.bind(this);
-    this.removeTodo = this.removeTodo.bind(this);
   }
+
+  componentWillMount() { console.log('TodoApp componentWillMount'); }
+
+  componentDidMount() { console.log('TodoApp componentDidMount'); }
+
+  componentWillReceiveProps() { console.log('TodoApp componentWillReceiveProps'); }
+
+  componentWillUpdate(nextProps, nextState) { console.log('TodoApp componentWillUpdate with state: ', nextState); }
+
+  shouldComponentUpdate() { console.log('TodoApp shouldComponentUpdate?'); return true; }
+
+  componentDidUpdate() { console.log('TodoApp componentDidUpdate'); }
+
+  componentWillUnmount() { console.log('TodoApp componentWillUnmount'); }
 
   onSubmit(event) {
     event.preventDefault();
@@ -28,26 +58,14 @@ class TodoApp extends React.Component {
     });
   }
 
-  removeTodo(event) {
-    const item = event.target.innerText;
-    const todos = this.state.todos;
-    const indexDone = todos.indexOf(item);
-    this.setState({
-      todos: this.state.todos.filter((todo, index) => index !== indexDone),
-    });
-  }
-
   render() {
+    console.log('render');
     return (
       <div>
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="Add a todo" />
         </form>
-        {
-          this.state.todos.length === 0 ?
-            <Message /> :
-            <List items={this.state.todos} onClick={this.removeTodo} />
-        }
+        <List items={this.state.todos} />
       </div>
     );
   }
