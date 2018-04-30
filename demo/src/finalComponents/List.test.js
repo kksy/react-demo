@@ -3,12 +3,11 @@ import { shallow } from 'enzyme';
 import List from './List';
 
 describe('List', () => {
-  it('should render list item', () => {
-    const component = shallow(<List items={['something']} />);
-    const targetItem = component.findWhere((node) => node.type() === 'li');
+  it('should render list items', () => {
+    const component = shallow(<List items={['something', 'another thing']} />);
 
-    expect(targetItem.exists()).toEqual(true);
-    expect(targetItem.text()).toEqual('something');
+    expect(component.find({ children: 'something' }).exists()).toEqual(true);
+    expect(component.find({ children: 'another thing' }).exists()).toEqual(true);
   });
 
   it('should have an onClick handler on list items', () => {
